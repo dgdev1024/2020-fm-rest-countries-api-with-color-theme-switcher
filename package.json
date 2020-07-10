@@ -1,0 +1,40 @@
+{
+  "name": "2020-fm-rest-countries-api-with-color-theme-switcher",
+  "version": "1.0.0",
+  "description": "My implementation of Frontend Mentor's \"REST Countries API with Color Theme Switcher\" challenge.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dgdev1024/2020-fm-rest-countries-api-with-color-theme-switcher.git"
+  },
+  "keywords": [
+    "frontend",
+    "mentor",
+    "rest",
+    "countries",
+    "api",
+    "color",
+    "theme",
+    "switcher"
+  ],
+  "author": "Dennis Griffin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dgdev1024/2020-fm-rest-countries-api-with-color-theme-switcher/issues"
+  },
+  "homepage": "https://github.com/dgdev1024/2020-fm-rest-countries-api-with-color-theme-switcher#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
