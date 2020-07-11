@@ -64,6 +64,7 @@ const HomePage = () => {
             name="region"
             id="region"
             className="home__region-select"
+            aria-label="Select a Region"
             value={queryRegion}
             onChange={(ev) => setQueryRegion(ev.target.value)}
             tabIndex={2}
