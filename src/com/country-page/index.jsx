@@ -6,6 +6,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { useCountryContext } from "../../ctx/country";
 import { formatNumber } from "../../lib/format-number";
+import "./index.scss";
 
 const CountryPage = () => {
   const { name } = useParams();
@@ -53,49 +54,57 @@ const CountryPage = () => {
             />
             <div className="country__details">
               <h2 className="heading country__name">{country.name}</h2>
-              <p className="text country__detail">
-                <strong className="country__detail-name">Native Name: </strong>
-                {country.nativeName}
-              </p>
-              <p className="text country__detail">
-                <strong className="country__detail-name">Population: </strong>
-                {formatNumber(country.population)}
-              </p>
-              <p className="text country__detail">
-                <strong className="country__detail-name">Region: </strong>
-                {country.region}
-              </p>
-              <p className="text country__detail">
-                <strong className="country__detail-name">Sub Region: </strong>
-                {country.subregion}
-              </p>
-              <p className="text country__detail country__detail--with-margin">
-                <strong className="country__detail-name">Capital: </strong>
-                {country.capital}
-              </p>
-              <p className="text country__detail">
-                <strong className="country__detail-name">
-                  Top Level Domain(s):{" "}
-                </strong>
-                {country.topLevelDomain.map((tld, index) =>
-                  index === 0 ? tld : `, ${tld}`
-                )}
-              </p>
-              <p className="text country__detail">
-                <strong className="country__detail-name">Currencies: </strong>
-                {country.currencies.map((currency, index) =>
-                  index === 0 ? currency.name : `, ${currency.name}`
-                )}
-              </p>
-              <p className="text country__detail">
-                <strong className="country__detail-name">Languages: </strong>
-                {country.languages.map((language, index) =>
-                  index === 0 ? language.name : `, ${language.name}`
-                )}
-              </p>
+              <div className="country__details-sub-one">
+                <p className="text country__detail">
+                  <strong className="country__detail-name">
+                    Native Name:{" "}
+                  </strong>
+                  {country.nativeName}
+                </p>
+                <p className="text country__detail">
+                  <strong className="country__detail-name">Population: </strong>
+                  {formatNumber(country.population)}
+                </p>
+                <p className="text country__detail">
+                  <strong className="country__detail-name">Region: </strong>
+                  {country.region}
+                </p>
+                <p className="text country__detail">
+                  <strong className="country__detail-name">Sub Region: </strong>
+                  {country.subregion}
+                </p>
+                <p className="text country__detail country__detail">
+                  <strong className="country__detail-name">Capital: </strong>
+                  {country.capital}
+                </p>
+              </div>
+              <div className="country__details-sub-two">
+                <p className="text country__detail">
+                  <strong className="country__detail-name">
+                    Top Level Domain(s):{" "}
+                  </strong>
+                  {country.topLevelDomain.map((tld, index) =>
+                    index === 0 ? tld : `, ${tld}`
+                  )}
+                </p>
+                <p className="text country__detail">
+                  <strong className="country__detail-name">Currencies: </strong>
+                  {country.currencies.map((currency, index) =>
+                    index === 0 ? currency.name : `, ${currency.name}`
+                  )}
+                </p>
+                <p className="text country__detail">
+                  <strong className="country__detail-name">Languages: </strong>
+                  {country.languages.map((language, index) =>
+                    index === 0 ? language.name : `, ${language.name}`
+                  )}
+                </p>
+              </div>
               {country.resolvedBorders.length > 0 && (
                 <div className="country__border-countries">
-                  <h3>Border Countries</h3>
+                  <h3 className="heading country__border-countries-heading">
+                    Border Countries
+                  </h3>
                   <div className="country__border-countries-button-strip">
                     {country.resolvedBorders.map((border, index) => (
                       <button

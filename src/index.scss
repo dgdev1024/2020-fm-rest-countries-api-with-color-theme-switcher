@@ -1,1 +1,57 @@
 @import "./global.scss";
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: $font-family-normal;
+  font-size: $font-size-normal;
+  transition: 0.3s;
+}
+
+.main {
+  min-height: 100vh;
+  background-color: $color-background-light;
+}
+
+.container {
+  width: 98%;
+  min-height: 100%;
+  margin: 0px auto;
+
+  @media #{$screen-small} {
+    width: 95%;
+  }
+
+  @media #{$screen-medium} {
+    width: 90%;
+  }
+
+  @media #{$screen-large} {
+    width: 85%;
+  }
+
+  @media #{$screen-extra-large} {
+    width: 80%;
+    max-width: 1200px;
+  }
+}
+
+.heading {
+  font-size: 1.5em;
+  padding-bottom: 12px;
+  color: $color-text-light;
+}
+
+.text {
+  color: $color-text-light;
+}
+
+.main--dark {
+  background-color: $color-background-dark;
+
+  .heading,
+  .text {
+    color: $color-text-dark;
+  }
+}

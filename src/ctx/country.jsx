@@ -11,20 +11,27 @@ const apiRoot = "https://restcountries.eu/rest/v2";
 const CountryContext = React.createContext();
 const CountryContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
+  const [lastSearch, setLastSearch] = useLocalStorage("-fm-last-search", "");
   const [queryRegion, setQueryRegion] = useLocalStorage("-fm-query-region", "");
 
   const searchForCountries = async (query) => {
+    // Set the loading flag to true.
     setLoading(true);
 
     try {
+      // Fetch the 'all' endpoint if no query was input.
       const endpoint = query === "" ? "all" : `name/${query}`;
       let res = await Axios.get(
         `${apiRoot}/${endpoint}?fields=flag;name;population;region;capital`
       );
+
+      // Filter countries by region, if one was provided.
       res = res.data.filter(
         (country) => queryRegion === "" || queryRegion === country.region
       );
 
+      // Save the last search in local storage before finishing up.
+      setLastSearch(query);
       setLoading(false);
       return res;
     } catch (err) {
@@ -42,7 +49,11 @@ const CountryContextProvider = ({ children }) => {
     setLoading(true);
 
     try {
+      // Fetch the country with the given name.
       const res = await Axios.get(`${apiRoot}/name/${fullName}?fullText=true`);
+
+      // The countries in the 'borders' array are shown in three-letter country codes.
+      // Fetch from the API in order to resolve those country codes to actual country names.
       let data = res.data[0];
       let resolvedBorders = [];
       for (const bdr of data.borders) {
@@ -66,6 +77,7 @@ const CountryContextProvider = ({ children }) => {
     <CountryContext.Provider
       value={{
         loading,
+        lastSearch,
         queryRegion,
         setQueryRegion,
         searchForCountries,

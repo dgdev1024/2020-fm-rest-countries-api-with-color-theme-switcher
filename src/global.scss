@@ -1,0 +1,28 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+// Font Variables
+$font-family-normal: "Nunito Sans", sans-serif;
+$font-size-normal: 14px;
+$font-size-details: 16px;
+$font-weight-light: 300;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+
+// Screen Query Variables
+$screen-small: "(min-width: 600px)";
+$screen-medium: "(min-width: 800px)";
+$screen-large: "(min-width: 1000px)";
+$screen-extra-large: "(min-width: 1200px)";
+
+// Light Mode Color Variables
+$color-background-light: hsl(0, 0%, 98%);
+$color-text-light: hsl(200, 15%, 8%);
+$color-input-light: hsl(0, 0%, 100%);
+$color-elements-light: hsl(0, 0%, 100%);
+
+// Dark Mode Color Variables
+$color-background-dark: hsl(0, 0%, 10%);
+$color-text-dark: hsl(200, 15%, 92%);
+$color-input-dark: hsl(0, 0%, 2%);
+$color-elements-dark: hsl(0, 0%, 0%);

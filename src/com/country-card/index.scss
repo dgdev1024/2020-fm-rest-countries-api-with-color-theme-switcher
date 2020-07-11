@@ -1,0 +1,36 @@
+@import "../../global.scss";
+
+.country-card {
+  background-color: $color-elements-light;
+  color: $color-text-light;
+  border-radius: 4px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+
+  &:hover {
+    background-color: $color-background-light;
+    box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__details {
+    padding: 16px;
+  }
+
+  &__detail {
+    padding: 2px 0px;
+  }
+}
+
+.main--dark .country-card {
+  background-color: $color-elements-dark;
+  color: $color-text-dark;
+
+  &:hover {
+    background-color: $color-background-dark;
+  }
+}

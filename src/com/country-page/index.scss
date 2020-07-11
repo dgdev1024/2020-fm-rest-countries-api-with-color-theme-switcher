@@ -1,0 +1,134 @@
+@import "../../global.scss";
+
+.country {
+  color: $color-text-light;
+
+  &__container {
+    padding: 64px 0px;
+    max-width: 480px;
+    min-height: 100%;
+
+    @media #{$screen-medium} {
+      max-width: none;
+    }
+  }
+
+  &__back {
+    margin-bottom: 32px;
+    padding: 4px 24px;
+    background-color: $color-elements-light;
+    color: $color-text-light;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background-color: $color-background-light;
+      cursor: pointer;
+    }
+
+    i {
+      display: inline-block;
+      margin-right: 4px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media #{$screen-medium} {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media #{$screen-large} {
+      gap: 48px;
+    }
+  }
+
+  &__flag {
+    width: 100%;
+  }
+
+  &__details {
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "name" "one" "two" "borders";
+    gap: 24px;
+
+    @media #{$screen-large} {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: "name name" "one two" "borders borders";
+    }
+  }
+
+  &__name {
+    grid-area: name;
+    padding-bottom: 0px !important;
+  }
+
+  &__details-sub-one {
+    grid-area: one;
+  }
+
+  &__details-sub-two {
+    grid-area: two;
+  }
+
+  &__detail {
+    padding: 4px 0px;
+    font-size: $font-size-details;
+  }
+
+  &__detail-name {
+    font-size: inherit;
+  }
+
+  &__border-countries {
+    grid-area: borders;
+  }
+
+  &__border-countries-heading {
+    padding-bottom: 4px;
+    font-size: $font-size-details;
+  }
+
+  &__border-countries-button-strip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  &__border-country-button {
+    display: inline-block;
+    padding: 4px 12px;
+    margin: 2px;
+    background-color: $color-elements-light;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      background-color: $color-background-light;
+      cursor: pointer;
+    }
+  }
+}
+
+.main--dark .country {
+  color: $color-text-dark;
+
+  &__back,
+  &__border-country-button {
+    background-color: $color-elements-dark;
+    color: $color-text-dark;
+
+    &:hover {
+      background-color: $color-background-dark;
+    }
+  }
+}

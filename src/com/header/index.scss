@@ -1,0 +1,47 @@
+@import "../../global.scss";
+
+.header {
+  background-color: $color-elements-light;
+  border-bottom: 2px solid lightgray;
+
+  &__container {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+
+  &__heading {
+    justify-self: start;
+    padding: 24px 0px !important;
+
+    @media #{$screen-medium} {
+      padding: 12px 0px !important;
+    }
+  }
+
+  &__button {
+    justify-self: end;
+    padding: 4px;
+    background-color: $color-elements-light;
+    color: $color-text-light;
+    border: none;
+    font-weight: $font-weight-semibold;
+
+    i {
+      margin-right: 4px;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.main--dark .header {
+  background-color: $color-elements-dark;
+
+  &__button {
+    background-color: $color-elements-dark;
+    color: $color-text-dark;
+  }
+}

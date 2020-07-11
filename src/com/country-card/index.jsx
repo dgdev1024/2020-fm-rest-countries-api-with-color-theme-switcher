@@ -5,6 +5,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { formatNumber } from "../../lib/format-number";
+import "./index.scss";
 
 const CountryCard = ({ country, index }) => {
   const history = useHistory();
